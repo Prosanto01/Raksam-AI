@@ -1,4 +1,4 @@
-# Raksam V3 device bodies
+# Raksam Brain V3 (RB3) device bodies
 
 Raksam has one brain and many possible bodies. A body implements `DeviceAdapter`
 with two operations: `observe()` and `execute(action)`.
