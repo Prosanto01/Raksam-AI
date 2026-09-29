@@ -4,6 +4,8 @@
 
 Raksam AI doesn't just chat. It **sees the screen, understands your command, controls the mouse and keyboard, and learns continuously** from your feedback — across PC, Android, and generic HTTP devices.
 
+> ⚠️ **Raksam AI was built purely as an experiment.** It is a personal research project, not a product. It is published for viewing and learning only — not for use.
+>
 > To the best of my knowledge, this is the first agent system from Bangladesh that combines conversational ability with real screen perception and device control. If you know of an earlier project, please open an Issue.
 
 ---
@@ -207,6 +209,8 @@ The active checkpoint (`brain/checkpoints/latest.pt`, 0.40M compatibility model)
 ---
 
 ## ⚠️ Safety — Read Before Using
+
+**Raksam AI was built purely as an experiment.** It is a personal research project, not a finished product, not a service, and not intended for public use.
 
 **Raksam AI can do anything on your computer.** It controls your mouse, your keyboard, your applications, and any device connected to your system. It reads your screen. It can open programs, type text, click buttons, and interact with any window or application on your machine — without restriction.
 
