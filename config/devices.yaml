@@ -1,0 +1,26 @@
+# A device is Raksam's body. The brain remains device-independent.
+# Add any supported body through an adapter. HTTP is the generic bridge for
+# robots, machines, custom controllers, labs, vehicles/test rigs, IoT, etc.
+devices:
+  - id: this_pc
+    name: This PC
+    kind: pc
+    capabilities: [screen, camera, mouse, keyboard, applications]
+    metadata: {}
+
+  # Example Android body:
+  # - id: my_android
+  #   name: My Android Phone
+  #   kind: android_adb
+  #   capabilities: [screen, touch, keyboard, applications]
+  #   metadata:
+  #     serial: "YOUR_ADB_SERIAL"
+
+  # Generic device body. The bridge implements the device-specific protocol.
+  # - id: my_robot
+  #   name: My Robot
+  #   kind: http
+  #   capabilities: [camera, motors, arm]
+  #   metadata:
+  #     url: "http://127.0.0.1:8766/action"
+  #     state_url: "http://127.0.0.1:8766/state"

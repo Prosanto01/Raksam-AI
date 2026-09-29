@@ -1,0 +1,40 @@
+brain:
+  model_name: "Raksam Brain V3 (RB3)"
+  created_by: "Prosanto Raksam"
+  checkpoint_path: "brain/checkpoints/latest.pt"
+  tokenizer_path: "brain/tokenizer/tokenizer.json"
+  max_new_tokens: 512
+  architecture:
+    # Target context for newly trained RB3-52M candidates. Existing checkpoints
+    # retain their embedded 128-token configuration until they are retrained.
+    block_size: 512
+    n_layer: 8
+    n_head: 12
+    n_kv_head: 4
+    n_embd: 768
+    ffn_mult: 2.8
+    dropout: 0.05
+    rope_theta: 10000.0
+    tie_embeddings: true
+    residual_scale: true
+conversation:
+  # The model still reserves room for the prompt; actual output is capped by
+  # the active checkpoint's context window.
+  max_new_tokens: 384
+loop:
+  max_steps: 25
+  dry_run: false
+perception:
+  screenshot: true
+  uia: true
+  ocr: true
+  camera: false
+api:
+  host: "127.0.0.1"
+  port: 8765
+  authentication: "environment RAKSAM_API_KEY"
+continual_learning:
+  enabled: true
+  auto_record_conversations: true
+  auto_record_action_results: true
+  candidate_only: true

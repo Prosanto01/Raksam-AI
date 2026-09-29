@@ -1,0 +1,6 @@
+# V3 no longer uses a per-action approval gate or app allowlist.
+# Device bridges remain responsible for their own protocol/authentication.
+# Raksam's core still uses bounded loops, timeouts and post-action verification
+# to prevent runaway behavior.
+autonomous_execution: true
+max_steps_per_task: 25

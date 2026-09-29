@@ -1,0 +1,43 @@
+# Autonomous learning is opt-in. Raksam only learns from sources you approve.
+enabled: true
+# Collect a bounded, allowlisted set of public pages immediately before a
+# normal `brain/train.py` run.  Pass --skip-web-collection to opt out once.
+collect_before_train: true
+user_agent: "RaksamWebLearner/2.0"
+request_timeout: 15
+max_page_bytes: 2000000
+# Keep raw public HTML for audit/reprocessing. It is stored separately and is
+# never loaded by the training dataset.
+save_raw_html: true
+min_text_chars: 800
+delay_seconds: 1.0
+max_pages_per_run: 20
+max_depth: 1
+allowed_domains:
+  - wikipedia.org
+  - wiktionary.org
+  - nasa.gov
+  - developer.wikimedia.org
+  - meta.wikimedia.org
+sources:
+  - https://www.nasa.gov/lunar-surface-technology/
+  - https://www.nasa.gov/centers-and-facilities/johnson/sunlight-extracts-oxygen-from-regolith-using-solar-chemistry/
+  - https://developer.wikimedia.org/use-content/data/
+
+storage:
+  knowledge_dir: data/web_knowledge
+  raw_dir: data/web_raw
+  manifest: data/web_knowledge/manifest.jsonl
+
+# When enabled, Raksam trains itself after enough new data arrives.
+auto_train: true
+min_new_documents: 5
+auto_train_epochs: 1
+# If true, the candidate becomes active after successful training.
+# Set false if you want manual promotion.
+auto_promote: true
+# Seconds between autonomous learning cycles when using --loop.
+loop_seconds: 3600
+
+# Keep a rolling backup of the previously active checkpoint.
+keep_previous_checkpoint: true
