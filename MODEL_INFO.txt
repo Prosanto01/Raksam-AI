@@ -1,0 +1,6 @@
+Raksam AI
+Model: Raksam Brain V3 (RB3)
+Created by: Prosanto Raksam
+From-scratch model; no external AI runtime.
+
+V3 focus: safe generation, validation, continual learning, candidate evaluation, replay, provenance, and device/action safety.

@@ -1,0 +1,18 @@
+# Perception
+pywinauto>=0.6.8
+pytesseract>=0.3.13
+mss>=9.0.2
+pillow>=11.0.0
+
+# Actuation
+pyautogui>=0.9.54
+psutil>=6.0.0
+keyboard>=0.13.5
+mouse>=0.7.1
+
+# Raksam Brain
+torch>=2.6.0
+numpy>=2.1.0
+
+# Utilities
+pyyaml>=6.0.2
