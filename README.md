@@ -238,6 +238,72 @@ If you choose to ignore this and run Raksam AI anyway:
 **Do not run this software.** It is shared as a research and educational artifact only.
 
 ---
+## 🧷 Before You Run — Read This First
+
+**This repository does not include everything needed to run Raksam AI.**
+
+If you download the ZIP and try to run it, you will find several things missing. **This is intentional.** Raksam AI is published as a research and educational artifact — not a ready-to-run product.
+
+### What is **not** included — and why
+
+| Missing item | Reason |
+|---|---|
+| ❌ **Trained model weights** (`brain/checkpoints/candidate.pt`,) | **Deliberately withheld for safety and confidentiality.** The trained model is not shared publicly. |
+| ❌ **Active compatibility checkpoint** (`brain/checkpoints/latest.pt`) | **Kept private.** The working model remains under the author's control and is not distributed. |
+| ❌ **Runtime data** (`data/experiences/*.jsonl`, `data/memory/*.jsonl`, `data/conversations/*.jsonl`) | Contains personal information — withheld for privacy |
+| ❌ **Demonstration recordings** (`data/demonstrations/*.jsonl`) | Recorded from the author's personal machine |
+| ❌ **Web learning cache** (`data/web_knowledge/*.jsonl`) | Collected during local runs — not shared |
+| ❌ **Python virtual environment** (`.venv/`) | Machine-specific — use `pip install -r requirements.txt` |
+| ❌ **Compiled cache** (`__pycache__/`) | Regenerated automatically on first run |
+| ❌ **User-specific configuration** (`config/*.local`, `.env`) | Contains secrets and personal settings |
+
+### 🔒 About the model weights
+
+The trained model files (`candidate.pt` and `latest.pt`) are **not published for two reasons:**
+
+1. **Safety** — Raksam AI has no safety layer. Publishing working model weights would allow anyone to run an unrestricted device-control agent. Withholding the weights prevents this.
+2. **Confidentiality** — The trained model represents significant personal research work. It is kept private and is not distributed with the source code.
+
+**The code shows the architecture. The trained intelligence stays with the author.**
+
+### What you **will** need to do before Raksam AI can run
+
+1. **Install Python 3.11 or 3.13**
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+   This includes PyTorch and other large packages — expect several hundred MB of downloads.
+
+3. **Train a model from scratch.** Because no trained weights are included, you must run:
+   ```bash
+   python brain/train.py
+   ```
+   ⚠️ Training requires:
+   - A GPU for anything usable (CPU training is impractically slow)
+   - A large licensed dataset (the repo only ships 4,608 sample records)
+   - Several hours to several days of compute
+
+4. **Configure the web learning sources** in `config/web_learning.yaml` if you want the crawler to collect material.
+
+5. **Review `config/devices`** before connecting any external hardware.
+
+### Known issues you may encounter
+
+- **Hardcoded paths** — some scripts may reference the author's local folder layout and need adjustment.
+- **Missing packages** — `requirements.txt` may not list every dependency used by experimental scripts.
+- **Missing runtime data files** — the agent expects `data/experiences/`, `data/memory/`, and `data/conversations/` to exist. Create empty folders or provide your own data.
+- **Python version sensitivity** — Raksam was developed on Python 3.13 for Windows voice support. Other versions may require adjustments.
+
+### If you still choose to run Raksam AI
+
+You are doing so **against the terms of this repository**. Your use is:
+
+- **Unauthorized** — the copyright forbids running this software
+- **At your own risk** — no support, no warranty, no fixes
+- **Your responsibility** — you accept all consequences
+
+**The recommended path is to read the code and learn from the design — not to run it.**
 
 ## 🗺️ Roadmap
 
