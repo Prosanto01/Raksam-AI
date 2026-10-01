@@ -1,6 +1,6 @@
 # Raksam AI 🇧🇩
 
-**The first AI Agent from Bangladesh with a complete perception → reasoning → action loop.**
+**The first AI Agent from Bangladesh, made from scratch with a complete perception → reasoning → action loop.**
 
 Raksam AI doesn't just chat. It **sees the screen, understands your command, controls the mouse and keyboard, and learns continuously** from your feedback — across PC, Android, and generic HTTP devices.
 
